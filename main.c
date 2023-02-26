@@ -36,9 +36,9 @@ int main()
                        c1.point.y,
                        c1.number);
             else
-                printf("inccorect data format \n");
+                printf("incorect data format \n");
         } else
-            printf("inccorect data format \n");
+            printf("incorect data format \n");
     }
     return 0;
 }
