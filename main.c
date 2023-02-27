@@ -36,9 +36,9 @@ int main()
                        c1.point.y,
                        c1.number);
             else
-                printf("incorect data format \n");
+                printf("incorect data of points of circle \n");
         } else
-            printf("incorect data format \n");
+            printf("incorect type format \n");
     }
     return 0;
 }
