@@ -30,7 +30,7 @@ int main() {
       else
         printf("incorrect data of points of circle. Expected NUM NUM, NUM \n");
     } else
-            printf("Incorrect type of figure format. Expected: \"Circle\ "n");
+            printf("Incorrect type of figure format. Expected: \"Circle\" \n");
   }
   return 0;
 }
