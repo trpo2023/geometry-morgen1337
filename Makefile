@@ -1,4 +1,4 @@
-CFLAGS = -fPIC -Isrc -Ithirdparty -Wall -Werror
+CFLAGS = -fPIE -Isrc -Ithirdparty -Wall -Werror
 
 main: obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o src/geometry/main.c src/libgeometry/check.c src/libgeometry/figmath.c
 	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o -lm -o main
