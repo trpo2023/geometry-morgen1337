@@ -1,6 +1,6 @@
 CFLAGS = -Isrc -Ithirdparty -Wall -Werror
 
-main: obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o
+main: obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o src/geometry/main.c src/libgeometry/check.c src/libgeometry/figmath.c
 	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o -lm -o main
 
 test: src/libgeometry/figmath.c src/libgeometry/figmath.h src/libgeometry/check.c src/libgeometry/check.h obj/src/test1/main.o obj/src/libgeometry/check.o obj/src/libgeometry/figmath.o
