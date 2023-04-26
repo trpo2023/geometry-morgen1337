@@ -56,9 +56,10 @@ int intersects(struct circle* c1, int index, int successci, int* b)
             x = c1[index].point.x - c1[i].point.x;
             y = c1[index].point.y - c1[i].point.y;
             distance = sqrtf((x * x) + (y * y));
-            if (c1[i].number + c1[index].number >= distance){
+            if (c1[i].number + c1[index].number >= distance) {
                 b[i] = 1;
-                count++;}
+                count++;
+            }
         }
     }
     return count;

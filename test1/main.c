@@ -2,20 +2,17 @@
 
 #include <ctest.h>
 #include <ctype.h>
+#include <libgeometry/check.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <math.h>
-#include <libgeometry/check.h>
 
 #define CLOSEout freopen("/dev/null", "w", stdout)
 #define OPENout freopen("/dev/tty", "w", stdout)
 
-
-
-CTEST(check_suite, stringtolower){
+CTEST(check_suite, stringtolower)
+{
     char result[6] = "HELLO";
     char expected[6] = "hello";
     string_tolower(result);
@@ -23,29 +20,31 @@ CTEST(check_suite, stringtolower){
     ASSERT_STR(expected, result);
 }
 
-CTEST(check_suite, detecttype){
+CTEST(check_suite, detecttype)
+{
     int result;
     int expected = CIRCLECODE;
     char str[7] = "circle";
     CLOSEout;
-    result = detecttype(str,0);
+    result = detecttype(str, 0);
     OPENout;
 
     ASSERT_EQUAL(expected, result);
     expected = TRIANGLECODE;
     char str1[10] = "triang";
-    result = detecttype(str1,0);
+    result = detecttype(str1, 0);
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(check_suite, strcmptype){
+CTEST(check_suite, strcmptype)
+{
     int result;
     int expected = -1;
     char line[] = "circl(12 16, 78)";
     CLOSEout;
     result = strcmptype(line, CIRCLECODE, 0);
     OPENout;
-    ASSERT_EQUAL(expected,result); 
+    ASSERT_EQUAL(expected, result);
     char line1[] = "triangle(11 11, 54)";
     expected = 0;
     CLOSEout;
@@ -56,8 +55,7 @@ CTEST(check_suite, strcmptype){
     CLOSEout;
     result = strcmptype(line2, CIRCLECODE, 0);
     OPENout;
-    ASSERT_EQUAL(expected,result);
-    
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(figmath_suite, trper)
@@ -82,7 +80,6 @@ CTEST(figmath_suite, trper)
 
 CTEST(figmath_suite, trarea)
 {
-
     struct triangle tr;
     tr.point1.x = 0;
     tr.point1.y = 0;
@@ -100,7 +97,8 @@ CTEST(figmath_suite, trarea)
     ASSERT_DBL_NEAR_TOL(expected, result, 0.5);
 }
 
-CTEST(figmath_suite, intersects){
+CTEST(figmath_suite, intersects)
+{
     int b[4] = {0};
     struct circle c1[4];
     c1[0].point.x = 3;
