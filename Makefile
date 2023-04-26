@@ -13,7 +13,7 @@ obj/src/libgeometry/check.o: src/libgeometry/figmath.c src/libgeometry/figmath.h
 	gcc $(CFLAGS) -c src/libgeometry/check.c  -o obj/src/libgeometry/check.o
 
 obj/src/libgeometry/figmath.o: src/libgeometry/figmath.c src/libgeometry/figmath.h
-	gcc $(CFLAGS) -c src/libgeometry/figmath.c -lm -o obj/src/libgeometry/figmath.o
+	gcc $(CFLAGS) -c src/libgeometry/figmath.c -o obj/src/libgeometry/figmath.o
 
 obj/src/test1/main.o: thirdparty/ctest.h test1/main.c
 	gcc $(CFLAGS) -c test1/main.c -o obj/src/test1/main.o
