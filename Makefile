@@ -17,3 +17,7 @@ obj/src/libgeometry/figmath.o: src/libgeometry/figmath.c src/libgeometry/figmath
 
 obj/src/test1/main.o: thirdparty/ctest.h test1/main.c
 	gcc $(CFLAGS) -c test1/main.c -o obj/src/test1/main.o
+.PHONY: clean
+
+clean:
+	rm obj/src/geometry/main.o obj/src/libgeometry/check.o obj/src/libgeometry/figmath.o obj/src/test1/main.o

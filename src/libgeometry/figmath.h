@@ -1,13 +1,13 @@
 #include <math.h>
 
 struct Point {
-  float x;
-  float y;
+    float x;
+    float y;
 };
 
 struct circle {
-  struct Point point;
-  float number;
+    struct Point point;
+    float number;
 };
 
 struct triangle {
@@ -21,4 +21,4 @@ float trper(struct triangle tr);
 
 float trarea(struct triangle tr);
 
-void intersects(struct circle *c1, int index,int successci, int *b);
+void intersects(struct circle* c1, int index, int successci, int* b);

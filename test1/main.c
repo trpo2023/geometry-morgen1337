@@ -1,15 +1,12 @@
 #define CTEST_MAIN
 
-#include <stdio.h>
 #include <ctest.h>
+#include <ctype.h>
+#include <libgeometry/figmath.h>
+#include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <math.h>
-#include <libgeometry/figmath.h>
-
-
-
 
 CTEST(figmath_suite, trper)
 {
@@ -21,7 +18,6 @@ CTEST(figmath_suite, trper)
     tr.point2.y = 0;
     tr.point3.x = 0;
     tr.point3.y = 5;
-
 
     tr.point4.x = 0;
     tr.point4.y = 0;
@@ -44,7 +40,6 @@ CTEST(figmath_suite, trarea)
     tr.point2.y = 0;
     tr.point3.x = 0;
     tr.point3.y = 5;
-
 
     tr.point4.x = 0;
     tr.point4.y = 0;
