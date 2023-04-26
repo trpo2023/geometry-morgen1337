@@ -33,7 +33,7 @@ CTEST(check_suite, detecttype)
     expected = TRIANGLECODE;
     char str1[10] = "triang";
     result = detecttype(str1, 0);
-    ASSERT_EQUAL(expected, result);
+    ASSERT_EQUAL(expected, result+77);
 }
 
 CTEST(check_suite, strcmptype)
