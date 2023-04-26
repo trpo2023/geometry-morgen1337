@@ -11,6 +11,45 @@
 #define CLOSEout freopen("/dev/null", "w", stdout)
 #define OPENout freopen("/dev/tty", "w", stdout)
 
+CTEST(check_suite, num_check)
+{
+    struct triangle t = {0};
+    struct circle c1 = {0};
+    int successtr = 0;
+    int successci = 0;
+    char line1[] = "circle(12 14 16)";
+    char line2[] = "circle(12, 14 15)";
+    char line3[] = "circle(12  14,     15)";
+    char line5[] = "triangle(12  14     15)";
+    char line4[] = "triangle(12 14, 15 16,16 14, 12 14)";
+
+    CLOSEout;
+    int result
+            = num_check(line1, 1, CIRCLECODE, &t, &c1, &successtr, &successci);
+    OPENout;
+    ASSERT_EQUAL(0, result);
+
+    CLOSEout;
+    result = num_check(line2, 1, CIRCLECODE, &t, &c1, &successtr, &successci);
+    OPENout;
+    ASSERT_EQUAL(0, result);
+
+    CLOSEout;
+    result = num_check(line3, 1, CIRCLECODE, &t, &c1, &successtr, &successci);
+    OPENout;
+    ASSERT_EQUAL(1, result);
+
+    CLOSEout;
+    result = num_check(line5, 1, CIRCLECODE, &t, &c1, &successtr, &successci);
+    OPENout;
+    ASSERT_EQUAL(0, result);
+
+    CLOSEout;
+    result = num_check(line4, 1, TRIANGLECODE, &t, &c1, &successtr, &successci);
+    OPENout;
+    ASSERT_EQUAL(1, result);
+}
+
 CTEST(check_suite, stringtolower)
 {
     char result[6] = "HELLO";
@@ -33,7 +72,7 @@ CTEST(check_suite, detecttype)
     expected = TRIANGLECODE;
     char str1[10] = "triang";
     result = detecttype(str1, 0);
-    ASSERT_EQUAL(expected, result + 77);
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(check_suite, strcmptype)
