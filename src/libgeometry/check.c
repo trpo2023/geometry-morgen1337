@@ -177,7 +177,7 @@ int strcmptype(char* mainline, int typecode, int columns)
                    columns,
                    mainline,
                    type);
-            return 1;
+            return -1;
         }
     }
     if (mainline[typesize - 1] != '(') {

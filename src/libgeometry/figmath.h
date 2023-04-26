@@ -21,4 +21,4 @@ float trper(struct triangle tr);
 
 float trarea(struct triangle tr);
 
-void intersects(struct circle* c1, int index, int successci, int* b);
+int intersects(struct circle* c1, int index, int successci, int* b);

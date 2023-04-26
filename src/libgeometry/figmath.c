@@ -46,17 +46,20 @@ float trarea(struct triangle tr)
     return sqrtf(p * (p - a) * (p - b) * (p - c));
 }
 
-void intersects(struct circle* c1, int index, int successci, int* b)
+int intersects(struct circle* c1, int index, int successci, int* b)
 {
     int distance, x, y;
+    int count = 0;
 
     for (int i = 0; i < successci; i++) {
         if (i != index) {
             x = c1[index].point.x - c1[i].point.x;
             y = c1[index].point.y - c1[i].point.y;
             distance = sqrtf((x * x) + (y * y));
-            if (c1[i].number + c1[index].number >= distance)
+            if (c1[i].number + c1[index].number >= distance){
                 b[i] = 1;
+                count++;}
         }
     }
+    return count;
 }

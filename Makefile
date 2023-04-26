@@ -1,10 +1,10 @@
-CFLAGS = -fPIE -Isrc -Ithirdparty -Wall -Werror
+CFLAGS = -fPIE -MMD -Isrc -Ithirdparty -Wall -Werror
 
-main: obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o src/geometry/main.c src/libgeometry/check.c src/libgeometry/figmath.c
-	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o -lm -o main
+bin/main: obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o src/geometry/main.c src/libgeometry/check.c src/libgeometry/figmath.c
+	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/geometry/main.o -lm -o bin/main
 
 test: src/libgeometry/figmath.c src/libgeometry/figmath.h src/libgeometry/check.c src/libgeometry/check.h obj/src/test1/main.o obj/src/libgeometry/check.o obj/src/libgeometry/figmath.o
-	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/test1/main.o -lm -o test
+	gcc $(CFLAGS) obj/src/libgeometry/figmath.o obj/src/libgeometry/check.o obj/src/test1/main.o -lm -o bin/test
 
 obj/src/geometry/main.o: src/libgeometry/figmath.c src/libgeometry/figmath.h src/libgeometry/check.c src/libgeometry/check.h src/geometry/main.c
 	gcc $(CFLAGS) -c src/geometry/main.c -o obj/src/geometry/main.o
