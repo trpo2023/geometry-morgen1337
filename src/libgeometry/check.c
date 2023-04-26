@@ -141,8 +141,8 @@ int num_check(
                        &t->point4.y);
                 *successtr = *successtr + 1;
                 // printf("\n Triangle X1 = %f Y1 = %f, X2 = %f Y2 = %f, X3 = %f
-                // Y3 = %f, Perimeter = %f, Area = %f\n", a,b,c,d,e,f, trper(*t),
-                // trarea(*t));
+                // Y3 = %f, Perimeter = %f, Area = %f\n", a,b,c,d,e,f,
+                // trper(*t), trarea(*t));
                 return 1;
             } else
                 printf("\nCOLUMN %d: %s || Error: x4 and y4 is not the same as "
