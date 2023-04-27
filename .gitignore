@@ -3,3 +3,6 @@ Untitled-1.c
 main
 test
 #Makefile#
+*.o
+*.d
+*.a
