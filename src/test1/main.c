@@ -11,17 +11,18 @@
 #define CLOSEout freopen("/dev/null", "w", stdout)
 #define OPENout freopen("/dev/tty", "w", stdout)
 
-CTEST(check_suite, bracket_check){
+CTEST(check_suite, bracket_check)
+{
     char line1[] = "circle(12 43";
     CLOSEout;
-    int result = bracketscheck(line1, "circle",  0);
+    int result = bracketscheck(line1, "circle", 0);
     OPENout;
     ASSERT_EQUAL(0, result);
     CLOSEout;
     char line2[] = "circle(12 15, 54)";
-    result = bracketscheck(line2,"circle", 0);
+    result = bracketscheck(line2, "circle", 0);
     OPENout;
-    ASSERT_EQUAL(1,result);
+    ASSERT_EQUAL(1, result);
 }
 
 CTEST(check_suite, num_check)
