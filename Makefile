@@ -25,12 +25,15 @@ obj/src/libgeometry/figmath.o: src/libgeometry/figmath.c
 obj/src/test1/main.o: src/test1/main.c
 	gcc $(CFLAGS) -MMD -c src/test1/main.c -o obj/src/test1/main.o
 
-.PHONY: clean test
+.PHONY: clean test run
 
 test: bin/test
 	./bin/test
 
 -include obj/src/geometry/main.d obj/src/libgeometry/check.d obj/src/libgeometry/figmath.d obj/src/test1/main.d
+
+run: bin/main
+	./bin/main
 
 clean:
 	rm obj/src/geometry/main.o obj/src/libgeometry/check.o obj/src/libgeometry/figmath.o obj/src/test1/main.o obj/src/geometry/main.d obj/src/libgeometry/check.d obj/src/libgeometry/figmath.d obj/src/test1/main.d
