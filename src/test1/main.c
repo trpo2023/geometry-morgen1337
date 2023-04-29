@@ -113,7 +113,22 @@ CTEST(figmath_suite, trper)
 
     float result = trper(tr);
 
-    const float expected = 17.07;
+    float expected = 17.07;
+    ASSERT_DBL_NEAR_TOL(expected, result, 0.5);
+
+    tr.point1.x = 10;
+    tr.point1.y = 4;
+    tr.point2.x = 17;
+    tr.point2.y = 22;
+    tr.point3.x = 6;
+    tr.point3.y = 34;
+
+    tr.point4.x = 10;
+    tr.point4.y = 4;
+
+    result = trper(tr);
+
+    expected = 65.1;
     ASSERT_DBL_NEAR_TOL(expected, result, 0.5);
 }
 
@@ -132,7 +147,22 @@ CTEST(figmath_suite, trarea)
 
     float result = trarea(tr);
 
-    const float expected = 12.5;
+    float expected = 12.5;
+    ASSERT_DBL_NEAR_TOL(expected, result, 1);
+
+    tr.point1.x = 10;
+    tr.point1.y = 4;
+    tr.point2.x = 17;
+    tr.point2.y = 22;
+    tr.point3.x = 6;
+    tr.point3.y = 34;
+
+    tr.point4.x = 10;
+    tr.point4.y = 4;
+
+    result = trarea(tr);
+
+    expected = 141;
     ASSERT_DBL_NEAR_TOL(expected, result, 0.5);
 }
 

@@ -38,7 +38,7 @@ float trarea(struct triangle tr)
     float dx13 = tr.point1.x - tr.point3.x;
     float dy13 = tr.point1.y - tr.point3.y;
     float dx23 = tr.point2.x - tr.point3.x;
-    float dy23 = tr.point2.x - tr.point3.x;
+    float dy23 = tr.point2.y - tr.point3.y;
     float a = sqrtf((dx12 * dx12) + (dy12 * dy12));
     float b = sqrtf((dx13 * dx13) + (dy13 * dy13));
     float c = sqrtf((dx23 * dx23) + (dy23 * dy23));
