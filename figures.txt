@@ -1,0 +1,5 @@
+triangle(1 1, 1 2, 2 1, 1 1)
+circle(1 4, 8)
+circle(2 5, 3)
+circle(100 400, 5)
+triangle(1 4, 5 2, 1 1, 1 4)
